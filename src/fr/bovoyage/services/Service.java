@@ -24,25 +24,24 @@ public class Service {
 	}
 	
 	public List<DestinationTO> getListeDestinations(){
-		
 		List<DestinationTO> destinationsTO = new ArrayList<>();
 		List<Destination> destinations = new ArrayList<>();
-		
 		destinations = destinationDAO.getAllDestinations();
 		for(Destination dest:destinations){
 			destinationsTO.add(new DestinationTO(dest));
 		}
-		
 		return destinationsTO;
 	}
 	
 	public List<DatesVoyage> getDatesVoyagesByDestinationId (int destid){
-		
 		List<DatesVoyage> datesVoyages = new ArrayList<>();
-		
-		datesVoyages = datesVoyagesDAO.getDatesVoyagesByDestinationId(destid);
-		
+		datesVoyages = destinationDAO.getDatesVoyageByDestinationId(destid);
 		return datesVoyages;
+	}
+	
+	public DestinationTO getDestinationById(int destid){
+		DestinationTO destinationTO = new DestinationTO(destinationDAO.getDestinationById(destid));
+		return destinationTO;
 	}
 	
 	

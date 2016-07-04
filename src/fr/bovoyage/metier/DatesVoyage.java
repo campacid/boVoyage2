@@ -7,21 +7,15 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="dates_voyages")
-@NamedQueries(
-		value = {@NamedQuery(name="DatesVoyage.getByDestinationId", query = "from DatesVoyage dv where dv.ke_destination = :destid")
-})
-
 
 public class DatesVoyage {	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="kp")
+	@Column(name="kp_date_voyage")
 	private int id;
 	@Column(name="date_depart")
 	private Date dateDepart;
