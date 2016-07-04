@@ -14,7 +14,7 @@ private EntityManagerFactory emf;
 		this.emf = emf;
 	}
 	
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings("unchecked") // suppression du warning sur le typage du retour de em.getResultList();
 	public List<Destination> getAllDestinations(){
 		EntityManager em = emf.createEntityManager();
 		List<Destination> destinations = em.createQuery("from Destination").getResultList();
