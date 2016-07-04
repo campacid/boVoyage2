@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import fr.bovoyage.metier.DatesVoyage;
 import fr.bovoyage.metier.dto.DestinationTO;
 import fr.bovoyage.services.Service;
 
@@ -40,6 +41,8 @@ public class BoVoyageServlet extends HttpServlet {
 		case "detail":
 			int id = Integer.parseInt(request.getParameter("id"));
 			DestinationTO dest = service.getDestinationById(id);
+			List<DatesVoyage> datesVoyages = service.getDatesVoyagesByDestinationId(dest.getId());
+			request.setAttribute("datesVoyages", datesVoyages);
 			request.setAttribute("destination", dest );
 			page="/DescriptionVoyage.jsp";
 			break;
