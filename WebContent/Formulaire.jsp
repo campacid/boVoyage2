@@ -15,8 +15,8 @@
 	<%@ include file="fragments/Navigateur.html" %>
 </div>
 Veuillez saisir l'information des participants:
-<form action="/">
-	<label for="civilite">Civilité:</label><input autocomplete="off"  name="civ" required="required" size="3"/>
+<form action="TestServlet">
+	<label for="civilite">Civilité:</label><input autocomplete="off"  name="civilite" required="required" size="3"/><br/>
 	<label for="nom">Nom : </label><input type="text" id="nom" name="nom" required="required"/> *<br/> 
 	<label for="prenom">Prénom : </label><input type="text" id="prenom" name="prenom"/> *<br/>	
 	<button>Envoyer</button><button type="reset">Annuler</button>

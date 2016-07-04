@@ -1,21 +1,17 @@
 package TEST;
 
 import java.io.IOException;
-import java.util.List;
+import java.util.Date;
 
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
+
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import fr.bovoyage.metier.DatesVoyage;
-import fr.bovoyage.metier.dto.DestinationTO;
+import fr.bovoyage.metier.Participant;
 import fr.bovoyage.services.Service;
 
 /**
@@ -38,15 +34,11 @@ public class TestServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		Service serv = new Service();
-
-		List<DestinationTO> dest = serv.getListeDestinations();
-		List<DatesVoyage> dates = serv.getDatesVoyagesByDestinationId(2);
-
-		request.setAttribute("destinations", dest);
-		request.setAttribute("dates", dates);
-		RequestDispatcher rd = getServletContext().getRequestDispatcher("/index.jsp");
+		Service service = (Service) getServletContext().getAttribute("service");
+		Participant participant = new Participant(request.getParameter("civilite"),
+				request.getParameter("nom"), request.getParameter("prenom"), "toto@toto.fr",new Date(1984, 9, 8) );
+		service.saveParticipant(participant);
+		RequestDispatcher rd = getServletContext().getRequestDispatcher("/Formulaire.jsp");
 		rd.forward(request, response);
 	}
 
