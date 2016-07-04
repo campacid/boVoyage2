@@ -39,15 +39,13 @@ public class TestServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		EntityManagerFactory factory = Persistence.createEntityManagerFactory("bovoyages");
-		Service serv = new Service(factory);
+		Service serv = new Service();
 
 		List<DestinationTO> dest = serv.getListeDestinations();
 		List<DatesVoyage> dates = serv.getDatesVoyagesByDestinationId(2);
 
 		request.setAttribute("destinations", dest);
 		request.setAttribute("dates", dates);
-		factory.close();
 		RequestDispatcher rd = getServletContext().getRequestDispatcher("/index.jsp");
 		rd.forward(request, response);
 	}

@@ -18,7 +18,7 @@
 </div>
 Images et
 description ici
-${destinations.description} <br/>
+${destination.description} <br/>
 Choisir date de voyage: 
 <select>
 	<c:forEach items="${datesVoyages}" var="dates">

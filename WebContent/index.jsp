@@ -16,13 +16,11 @@
 		<%@ include file="fragments/Navigateur.html" %>
 	</div>
 	<div>
-	<c:forEach items="${destinations }" var="destination">
-		<a href="DescriptionVoyage.jsp">			
-<!-- 			<img src="images/canada_1.jpg" alt="DescriptionVoyage.jsp"><br/> -->
-<!-- 			Click pour afficher description -->					
+		<c:forEach items="${destinations}" var="destination">
+			<a href="BoVoyageServlet?target=detail&id=${destination.id}">
 				<div><img src="images/${destination.images[0]}"/></div>
 				<div>${destination.region}</div> 
-		</a>
+			</a>	
 		</c:forEach>
 	</div>
 </body>
