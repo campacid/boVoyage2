@@ -31,5 +31,4 @@ public class ParticipantDAO {
 		tr.commit();
 		em.close();
 	}
-
 }
