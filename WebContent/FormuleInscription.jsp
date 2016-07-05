@@ -40,16 +40,16 @@
 		<div class="row">
 			<div class="col-md-8">
 				<div class="col-md-10">
-					<form role="form" id="formParticipants" action="BoVoyageServlet">
+					<form role="form" id="formParticipants" action="ValidationVoyage.jsp"">
 					<input type="hidden" value="formulaire" name="target"/>
 					<input type="hidden" value="${nbParticipants}" name="nbParticipants"/>
 						<fieldset>
-							<legend>${nbParticipants+1} voyageur(s) à enregistrer </legend>
+							<legend>Inscrivez-vous</legend>
 			
 							<div>
 								<label for="Gender">Civility:</label> <input type="radio"
-									name="civilite" value="M" />M <input type="radio"
-									name="civilite" value="Mme" />Mme
+									name="civilite" value="Monsieur" />M <input type="radio"
+									name="civilite" value="Madame" />Mme
 							</div>
 			
 							<div class="form-group has-feedback">
@@ -77,10 +77,21 @@
 									class="glyphicon form-control-feedback"></span>
 									<span class="help-block">Le champ email n'est accessible qu'aux personnes majeures.</span>
 							</div>
+							<div class="form-group has-feedback">
+								<label for="adresse">Adresse:</label> <input type="text"
+									class="form-control" id="adresse"><span
+									class="glyphicon form-control-feedback"></span>
+							</div>
+							
+							<div class="form-group has-feedback">
+								<label for="telephone">Telephone:</label> <input type="number"
+									class="form-control" id="telephone"><span
+									class="glyphicon form-control-feedback"></span>
+							</div>
 			
 			
 							<button id="validerListe" class="btn btn-primary btn-block lien"
-								type="submit">Valider le voyageur</button>
+								type="submit">Valider l'inscription</button>
 			
 						</fieldset>
 					</form>
@@ -92,4 +103,4 @@
 		<%@ include file="fragments/Footer.html"%>
 	</div>
 </body>
-</html>
+</html>>

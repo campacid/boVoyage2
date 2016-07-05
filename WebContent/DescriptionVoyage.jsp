@@ -50,7 +50,8 @@
 			<input name="isFirst" value="true" type="hidden"/>
 			<div id="affichePrix">
 				<div>Veuillez choisir la date de voyage :</div>
-				<select id="listeDate" class="selectpicker" multiple name="dateId">
+				<select id="listeDate" class="selectpicker"  name="dateId">
+					<option data-prix = '---' value='-1'> Veuillez choisir une date </option>
 					<c:forEach items="${datesVoyages}" var="dates">
 						<option data-prix="${dates.prixHT}" value="${dates.id}"><f:formatDate
 								pattern="dd/MM/yyyy" value="${dates.dateDepart}"></f:formatDate>
@@ -62,11 +63,11 @@
 				<div>Veuillez choisir le nombre de participants :</div>
 				<input type="number" name="nbParticipants" id="nbParticipants"/><br/>
 				<h3>
-					Prix (en euros) : <span id="prix"></span>
+					Prix (en euros) par personne : <span id="prix"></span>
 				</h3>
 	
 				<button type="submit"
-					class="btn btn-primary btn-md lien" style="float:left">Choisir ce voyage</button>
+					id="submit" class="btn btn-primary btn-md lien" style="float:left">Choisir ce voyage</button>
 			</div>
 		</form>
 	</div>

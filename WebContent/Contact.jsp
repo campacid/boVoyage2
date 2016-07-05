@@ -28,17 +28,24 @@
 <title>BoVoyage-Projet2</title>
 <link rel="stylesheet" href="CSS/BoVoyage2.css" type="text/css">
 <script type="text/javascript" src="scripts/detail.js"></script>
+</head>
 <body>
-	<div class="row">
+<div class="row">
 		<%@ include file="fragments/Header.html"%>
 	</div>
 		
 		<%@ include file="fragments/Navigateur.html"%>
-	<div class="row">
 	
-	<h2 style="margin:10%">Merci pour votre confiance!!!!!!</h2>
+	<div class="container container-fluid" id="main">
+		<div class="col-md-8">
+			<div class="col-md-7">
+				<h3>Vous pouvez nous contacter</h3>
+				<h4>Par mail : </h4> toto@titi.tata<br/>
+				<h4>Par telephone : </h4> 0123456789<br/>
+				
+			</div>
+		</div>
 	</div>
-	
 	<div class="row">
 		<%@ include file="fragments/Footer.html" %>
 	</div>

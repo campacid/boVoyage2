@@ -82,12 +82,10 @@ public class Service {
 	}
 
 	public void sauvegarderDossier(List<Participant> participants, int destId, int dateId) {
-		List<Integer> idParticipants = new ArrayList<>();
 		for (Participant participant : participants) {
 			participantDAO.save(participant);
-			idParticipants.add(new Integer(participant.getId()));
 		}
-		dossierDAO.save(idParticipants,destId,dateId);
+		dossierDAO.save(destId,dateId);
 	}
 
 }

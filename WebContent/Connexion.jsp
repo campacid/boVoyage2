@@ -28,17 +28,27 @@
 <title>BoVoyage-Projet2</title>
 <link rel="stylesheet" href="CSS/BoVoyage2.css" type="text/css">
 <script type="text/javascript" src="scripts/detail.js"></script>
+</head>
 <body>
-	<div class="row">
+<div class="row">
 		<%@ include file="fragments/Header.html"%>
 	</div>
 		
 		<%@ include file="fragments/Navigateur.html"%>
-	<div class="row">
 	
-	<h2 style="margin:10%">Merci pour votre confiance!!!!!!</h2>
+	<div class="container container-fluid" id="main">
+		<div class="col-md-8">
+			<div class="col-md-7">
+				<form>
+					<fieldset>
+						<legend>Identifiez-vous</legend>
+							<label for="identifiant">Indentifiant : </label><input class="form-control"/>
+							<label for="psw">Password : </label><input class="form-control"/>
+					</fieldset>
+				</form>
+			</div>
+		</div>
 	</div>
-	
 	<div class="row">
 		<%@ include file="fragments/Footer.html" %>
 	</div>
