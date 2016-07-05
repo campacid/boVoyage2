@@ -1,11 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="f"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <script
@@ -41,29 +41,34 @@
 		<div class="row" id="description">
 			<img src="images/${destination.images[0]}" class="img-responsive"
 				style="width: 100%; height: 250px"><br />
-			<h3>Description du voyage à ${destination.region}</h3>
+			<h3>Description du voyage Ã  ${destination.region}</h3>
 			<p>${destination.description}
 		</div>
-
-		<div id="affichePrix">
-			Veuillez choisir la date de voyage pour visualiser le prix du voyage:
-			<select id="listeDate">
-				<c:forEach items="${datesVoyages}" var="dates">
-					<option data-prix="${dates.prixHT}"><f:formatDate
-							pattern="dd/MM/yyyy" value="${dates.dateDepart}"></f:formatDate>
-						-
-						<f:formatDate pattern="dd/MM/yyyy" value="${dates.dateRetour}"></f:formatDate>
-					</option>
-				</c:forEach>
-			</select>
-
-			<h3>
-				Prix (en euros) : <span id="prix"></span>
-			</h3>
-
-			<a href="Formulaire.jsp" id="btCommande" type="button"
-				class="btn btn-primary btn-md lien" style="float:left">Choisir ce voyage</a>
-		</div>
+		
+		<form action="BoVoyageServlet" method="get">
+			<input name="target" value="formulaire" type="hidden"/>
+			<input name="isFirst" value="true" type="hidden"/>
+			<div id="affichePrix">
+				<div>Veuillez choisir la date de voyage :</div>
+				<select id="listeDate" class="selectpicker" multiple name="dateId">
+					<c:forEach items="${datesVoyages}" var="dates">
+						<option data-prix="${dates.prixHT}" value="${dates.id}"><f:formatDate
+								pattern="dd/MM/yyyy" value="${dates.dateDepart}"></f:formatDate>
+							<f:formatDate pattern="dd/MM/yyyy" value="${dates.dateRetour}"></f:formatDate>
+						</option>
+					</c:forEach>
+				</select>
+				
+				<div>Veuillez choisir le nombre de participants :</div>
+				<input type="number" name="nbParticipants" id="nbParticipants"/><br/>
+				<h3>
+					Prix (en euros) : <span id="prix"></span>
+				</h3>
+	
+				<button type="submit"
+					class="btn btn-primary btn-md lien" style="float:left">Choisir ce voyage</button>
+			</div>
+		</form>
 	</div>
 
 	<div class="row">

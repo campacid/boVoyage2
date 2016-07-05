@@ -1,9 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
@@ -40,75 +40,53 @@
 		<div class="row">
 			<div class="col-md-8">
 				<div class="col-md-10">
-					<form role="form" id="formParticipants">
+					<form role="form" id="formParticipants" action="BoVoyageServlet">
+					<input type="hidden" value="formulaire" name="target"/>
+					<input type="hidden" value="${nbParticipants}" name="nbParticipants"/>
 						<fieldset>
 							<legend>Enregistrement</legend>
 			
 							<div>
 								<label for="Gender">Civility:</label> <input type="radio"
-									name="civilite" value="Monsieur" />M <input type="radio"
-									name="civilite" value="Madame" />Mme
+									name="civilite" value="M" />M <input type="radio"
+									name="civilite" value="Mme" />Mme
 							</div>
 			
 							<div class="form-group has-feedback">
 								<label for="nom">Nom:</label> <input type="text"
-									class="form-control" id="nom"><span
+									class="form-control" id="nom" name="nom"><span
 									class="glyphicon form-control-feedback"></span>
 							</div>
 			
 							<div class="form-group has-feedback">
 								<label for="prenom">Prenom:</label> <input type="text"
-									class="form-control" id="prenom"> <span
+									class="form-control" id="prenom" name="prenom"> <span
 									class="glyphicon form-control-feedback"></span>
 							</div>
 			
 			
 							<div class="form-group has-feedback">
 								<label for="dateDeNaissance">Date de naissance:</label> <input
-									type="date" class="form-control" id="dateDeNaissance"> <span
+									type="date" class="form-control" id="dateDeNaissance" name="dateDeNaissance"> <span
 									class="glyphicon form-control-feedback"></span>
 							</div>
 			
 							<div class="form-group has-feedback">
 								<label for="email">Email address:</label> <input type="email"
-									class="form-control" id="emailParticipant" disabled> <span
+									class="form-control" name="emailParticipant" id="emailParticipant" disabled> <span
 									class="glyphicon form-control-feedback"></span>
 									<span class="help-block">Le champ email n'est accessible qu'aux personnes majeures.</span>
 							</div>
 			
-							<div class="form-group has-feedback">
-								<label for="telephone">Telephone:</label> <input type="tel"
-									class="form-control" id="telephone"> <span
-									class="glyphicon form-control-feedback"></span>
-							</div>
 			
-			
-							<button id="ajouterParticipant" type="button"
-								class="btn btn-default">Ajouter un voyageur</button>
+							<button id="validerListe" class="btn btn-primary btn-block lien"
+								type="submit">Valider le voyageur</button>
 			
 						</fieldset>
 					</form>
 				</div>
 			</div>
-			<div class="col-md-4">
-				<div class="form-group">
-					<label for="listeParticipants">Liste des participants :</label> <select
-						class="form-control" id="listeParticipants" size=10></select>
-					<button id="viderListe" type="button" class="btn btn-default">Vider
-						la liste</button>
-					<button id="supprimerElement" type="button" class="btn btn-default">Supprimer
-						la selection</button>
-				</div>
-				
-				<div class="row">
-					<div class="col-md-8">
-						<button id="validerListe" class="btn btn-primary btn-block lien"
-							data-lien="commande.html">Valider la liste</button>
-				</div>
-			</div>
-			</div>
 		</div>
-		
 	</div>
 	<div class="row">
 		<%@ include file="fragments/Footer.html"%>

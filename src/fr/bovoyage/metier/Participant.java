@@ -22,13 +22,13 @@ public class Participant {
 	private String prenom;
 	private String email;
 	@Column(name="date_naissance")
-	private Date DateNaissance;
+	private String DateNaissance;
 	
 	public Participant(){
 	
 	}
 	
-	public Participant(String civilite, String nom, String prenom, String email, Date dateNaissance) {
+	public Participant(String civilite, String nom, String prenom, String email, String dateNaissance) {
 		super();
 		this.civilite = civilite;
 		this.nom = nom;
@@ -77,11 +77,11 @@ public class Participant {
 		this.email = email;
 	}
 
-	public Date getDateNaissance() {
+	public String getDateNaissance() {
 		return DateNaissance;
 	}
 
-	public void setDateNaissance(Date dateNaissance) {
+	public void setDateNaissance(String dateNaissance) {
 		DateNaissance = dateNaissance;
 	}
 	

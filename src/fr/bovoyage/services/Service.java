@@ -81,13 +81,13 @@ public class Service {
 		clientDAO.delete(client);
 	}
 
-	public void sauvegarderDossier(List<Participant> participants, int destid, Date dateAller, Date dateRetour) {
+	public void sauvegarderDossier(List<Participant> participants, int destId, int dateId) {
 		List<Integer> idParticipants = new ArrayList<>();
 		for (Participant participant : participants) {
 			participantDAO.save(participant);
 			idParticipants.add(new Integer(participant.getId()));
 		}
-		dossierDAO.save(idParticipants,destid,dateAller,dateRetour);
+		dossierDAO.save(idParticipants,destId,dateId);
 	}
 
 }

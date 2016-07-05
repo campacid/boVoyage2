@@ -1,10 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
@@ -28,32 +28,8 @@
 <title>BoVoyage-Projet2</title>
 <link rel="stylesheet" href="CSS/BoVoyage2.css" type="text/css">
 <script type="text/javascript" src="scripts/detail.js"></script>
-</head>
 <body>
-	
-	<div class="row">
-		<%@ include file="fragments/Header.html"%>
-	</div>
-		
-		<%@ include file="fragments/Navigateur.html"%>
-	
-	<div class="container container-fluid" id="main">
-		<div class="row">
-			<c:forEach items="${destinations}" var="destination">
-				<div class="col-sm-3">
-					<a href="BoVoyageServlet?target=detail&id=${destination.id}" class="thumbnail">
-							<img class="img-responsive" src="images/${destination.images[0]}"/>
-						<div><h3>${destination.region}</h3></div>
-						<p> Des journées merveilleures à petit prix à ${destination.region}</p>
-					</a>
-				</div> 
-			</c:forEach>
-		</div>
-	</div>		
-	<div class="row">
-		<%@ include file="fragments/Footer.html" %>
-	</div>
-		
-	
+
+Merci!!!!!
 </body>
 </html>

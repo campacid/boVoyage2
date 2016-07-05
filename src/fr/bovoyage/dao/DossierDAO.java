@@ -1,7 +1,5 @@
 package fr.bovoyage.dao;
 
-
-import java.util.Date;
 import java.util.List;
 
 import javax.persistence.EntityManagerFactory;
@@ -13,7 +11,8 @@ public class DossierDAO {
 		this.emf = emf;
 	}
 
-	public void save(List<Integer> idParticipants, int destid, Date dateAller, Date dateRetour) {
+	public void save(List<Integer> idParticipants, int destId, int dateId) {
+		
 		
 	}
 	
