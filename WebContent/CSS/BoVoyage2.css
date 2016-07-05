@@ -1,29 +1,58 @@
 @CHARSET "ISO-8859-1";
-label{
-	width:100px;
-	float:left;
-	display:block;
+.header{
+	padding:3%;
+	background-color:#ff6d2f;
 }
-nav ul {
-	border-radius:10px;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #797979;
+body{
+	background-color:#ffe9df;
+}
+#main{
+	margin-bottom:50px;
+}
+#main #description{
+	padding-left:10%;
+	width:85%;
+}
+#main #affichePrix{
+	width:85%;
+	padding-top:50px;
+	padding-left:10%;
+}
+.footer{
+	background-color:#51534a;
+	color:#ffffff;
+	margin:5px;
+	padding:25px;
+	text-align:justify;
+}
+a{
+	color :black;
+}
+a:hover{
+	text-decoration: none;
+}
+.thumbnail p{
+	text-align:center;
+}
+.thumbnail h3{
+	text-align:center;
+}
+#idbarre{
+	background-color:#51534a;
+}
+.navbar-inverse .navbar-brand{
+	color : #ffffff;
+}
+.navbar-inverse .navbar-nav>li>a {
+	color : #ffffff;
 }
 
-nav ul li {
-    float: left;
+#maNav ul li a:hover {
+    background-color: #252321;
 }
-nav ul li a {
-    display: inline-block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-nav ul li a:hover {
-    background-color: #111;
+#btCommande{
+	text-decoration: none;
+	background-color:#004284;
+	color:white;
+	height:
 }

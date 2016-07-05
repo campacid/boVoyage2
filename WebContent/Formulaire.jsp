@@ -1,26 +1,117 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+	integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+	crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
+	integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r"
+	crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+	integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+	crossorigin="anonymous"></script>
+<title>BoVoyage-Projet2</title>
+
 <link rel="stylesheet" href="CSS/BoVoyage2.css" type="text/css">
+<script type="text/javascript" src="scripts/formulaire.js"></script>
+
 </head>
 <body>
-<div>
-	<%@ include file="fragments/Header.html" %>
-</div>
-<div>
-	<%@ include file="fragments/Navigateur.html" %>
-</div>
-Veuillez saisir l'information des participants:
-<form action="TestServlet">
-	<label for="civilite">Civilité:</label><input autocomplete="off"  name="civilite" required="required" size="3"/><br/>
-	<label for="nom">Nom : </label><input type="text" id="nom" name="nom" required="required"/> *<br/> 
-	<label for="prenom">Prénom : </label><input type="text" id="prenom" name="prenom"/> *<br/>	
-	<button>Envoyer</button><button type="reset">Annuler</button>
-</form>
+	<div class="row">
+		<%@ include file="fragments/Header.html"%>
+	</div>
+	<%@ include file="fragments/Navigateur.html"%>
 
+	<div class="container container-fluid" id="main">
+		<div class="row">
+			<div class="col-md-8">
+				<div class="col-md-10">
+					<form role="form" id="formParticipants">
+						<fieldset>
+							<legend>Enregistrement</legend>
+			
+							<div>
+								<label for="Gender">Civility:</label> <input type="radio"
+									name="civilite" value="Monsieur" />M <input type="radio"
+									name="civilite" value="Madame" />Mme
+							</div>
+			
+							<div class="form-group has-feedback">
+								<label for="nom">Nom:</label> <input type="text"
+									class="form-control" id="nom"><span
+									class="glyphicon form-control-feedback"></span>
+							</div>
+			
+							<div class="form-group has-feedback">
+								<label for="prenom">Prenom:</label> <input type="text"
+									class="form-control" id="prenom"> <span
+									class="glyphicon form-control-feedback"></span>
+							</div>
+			
+			
+							<div class="form-group has-feedback">
+								<label for="dateDeNaissance">Date de naissance:</label> <input
+									type="date" class="form-control" id="dateDeNaissance"> <span
+									class="glyphicon form-control-feedback"></span>
+							</div>
+			
+							<div class="form-group has-feedback">
+								<label for="email">Email address:</label> <input type="email"
+									class="form-control" id="emailParticipant" disabled> <span
+									class="glyphicon form-control-feedback"></span>
+									<span class="help-block">Le champ email n'est accessible qu'aux personnes majeures.</span>
+							</div>
+			
+							<div class="form-group has-feedback">
+								<label for="telephone">Telephone:</label> <input type="tel"
+									class="form-control" id="telephone"> <span
+									class="glyphicon form-control-feedback"></span>
+							</div>
+			
+			
+							<button id="ajouterParticipant" type="button"
+								class="btn btn-default">Ajouter un voyageur</button>
+			
+						</fieldset>
+					</form>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="form-group">
+					<label for="listeParticipants">Liste des participants :</label> <select
+						class="form-control" id="listeParticipants" size=10></select>
+					<button id="viderListe" type="button" class="btn btn-default">Vider
+						la liste</button>
+					<button id="supprimerElement" type="button" class="btn btn-default">Supprimer
+						la selection</button>
+				</div>
+				
+				<div class="row">
+					<div class="col-md-8">
+						<button id="validerListe" class="btn btn-primary btn-block lien"
+							data-lien="commande.html">Valider la liste</button>
+				</div>
+			</div>
+			</div>
+		</div>
+		
+	</div>
+	<div class="row">
+		<%@ include file="fragments/Footer.html"%>
+	</div>
 </body>
 </html>
